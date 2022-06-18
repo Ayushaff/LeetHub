@@ -12,8 +12,9 @@ class Solution {
         for(int i=0;i<nums.length;i++)
         set.add(nums[i]);
         int size=set.size();
-        if(size==nums.length)return false;
-        else return true;
+        return size!=nums.length;
+        /*if(size==nums.length)return false;
+        else return true;*/
     }
     
 }
