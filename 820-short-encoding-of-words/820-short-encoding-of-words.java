@@ -10,13 +10,13 @@ class Solution {
         Set<String> set = new HashSet<>();
         int len = 0;
 
-        for (String word : words) {
+        for (String word : words) {//1
             set.add(word);
         }
         for (String word : words) {
-            for (int i = 1; i < word.length(); i++) {
-                String sub = word.substring(i);
-                set.remove(sub);
+            for (int i = 1; i < word.length(); i++) {//2
+                String sub = word.substring(i);//3
+                set.remove(sub);//4
             }
         }
         for (String word : set) {
