@@ -19,6 +19,8 @@ class Solution {
             }
             j++;
         }
+        //for leetquestion reverse words in a string 2; 
+        //reverse(str,0,str.length-1);
         return new String(str);
     }
 }
