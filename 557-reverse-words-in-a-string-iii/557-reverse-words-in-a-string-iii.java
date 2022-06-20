@@ -7,8 +7,8 @@ class Solution {
         }
     }
     public String reverseWords(String s) {
- if (s == null || s.length() == 0)
-            return s;
+/* if (s == null || s.length() == 0)
+            return s;*/
         char[] str = s.toCharArray();
         int i = 0;
         int j = 0;
