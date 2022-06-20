@@ -24,4 +24,9 @@ class Solution {
         }
         return len;
     }
+    //1 all the strings in the set 
+    //2 set: iterate each word one by find all possible substrings
+    //and
+    //3 check if sbstring is already present in set
+    //4 if yes then remove it
 }
