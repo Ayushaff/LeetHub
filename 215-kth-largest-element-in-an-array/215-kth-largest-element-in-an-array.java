@@ -5,15 +5,17 @@ class Solution {
     
     public int findKthLargest(int[] nums, int k) {
 //min_heap  
-     PriorityQueue<Integer> pq = new PriorityQueue<>();
+    /* PriorityQueue<Integer> pq = new PriorityQueue<>();
         for(int i:nums){
             pq.add(i);  
             if(pq.size()>k)pq.poll();
         }
         return pq.peek();
-    }
+    }*/
+        Arrays.sort(nums);
+        return nums[(nums.length)-k];
 }    
-    
+}
    //2
 /*public int findKthLargest(int[] nums, int k) {
 //min_heap    
