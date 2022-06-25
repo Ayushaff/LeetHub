@@ -1,5 +1,5 @@
 class Solution {
-    //3
+    //3recursive
     public void reverse(char []arr,int s,int e){
         if (s >=e)
     return;
@@ -9,11 +9,12 @@ class Solution {
         reverse(arr,s+1,e-1);
     }
     public void reverseString(char[] s) {
-        //1
+        //1Collections.swap();
        /* List<Character> vector = new ArrayList<>();
         for(int i=0;i<s.length;i++)vector.add(s[i]);
             Collections.swap(vector,0,s.length);
     }*/
+        //2swap
        /* int ap=0;
         int bp=s.length-1;
         while(ap<bp){
