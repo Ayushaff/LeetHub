@@ -2,8 +2,13 @@ class Solution {
     //4
     
     //3
-    
     public int findKthLargest(int[] nums, int k) {
+        Arrays.sort(nums);
+        return nums[(nums.length)-k];
+}    
+}
+    
+    /*public int findKthLargest(int[] nums, int k) {
 //min_heap  
     /* PriorityQueue<Integer> pq = new PriorityQueue<>();
         for(int i:nums){
@@ -12,10 +17,7 @@ class Solution {
         }
         return pq.peek();
     }*/
-        Arrays.sort(nums);
-        return nums[(nums.length)-k];
-}    
-}
+        
    //2
 /*public int findKthLargest(int[] nums, int k) {
 //min_heap    
