@@ -1,10 +1,8 @@
 class Solution {
-    public int[] sortedSquares(int[] nums) {
-                int n=nums.length;
-        for (int i = 0; i < n; i++)
-            nums[i] *= nums[i];
-        for (int i : nums)
-            Arrays.sort(nums);
-        return nums;
+public:
+    vector<int> sortedSquares(vector<int>& a) {
+        for (auto &x : a) x *= x;
+        sort(a.begin(), a.end());
+        return a;
     }
-}
+};
