@@ -13,7 +13,7 @@ private:
     public:
     bool checkInclusion(string s1, string s2)
     {
-
+//window
         // count array for occurences of characters in string s1
         int count1[26] = {0};
 
