@@ -3,18 +3,18 @@ class Solution {
         
         int n=nums.length;
         int mid=0;
-        int lo=0;
-        int hig=n-1; 
+        int start=0;
+        int end=n-1; 
         
-        while(lo<=hig){
-            mid=(lo+hig)/2;
+        while(start<=end){
+            mid=(start+end)/2;
         
         
         if(nums[mid]==tar)return mid;
         
-        else if(nums[mid]<tar)lo=mid+1;
+        else if(nums[mid]<tar)start=mid+1;
         
-        else hig =mid-1;
+        else end =mid-1;
         }
              return -1;
     }
