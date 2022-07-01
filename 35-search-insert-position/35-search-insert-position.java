@@ -5,7 +5,7 @@ class Solution {
         int lo=0;
         int hi=n-1;
         while(lo<=hi){
-            mid=(lo+hi)/2;
+            mid=lo+(hi-lo)/2;
         if(nums[mid]==tar)return mid;
             else if(nums[mid]<tar)lo=mid+1;
             else hi=mid-1;
