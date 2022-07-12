@@ -1,9 +1,9 @@
 class Solution {
     public int[] searchRange(int[] nums, int target) {
-        int[] result = new int[2];
-        result[0] = findStartingIndex(nums, target);
-        result[1] = findEndingIndex(nums, target);
-        return result;
+        int[] res = new int[2];
+        res[0] = findStartingIndex(nums, target);
+        res[1] = findEndingIndex(nums, target);
+        return res;
     }
 
     public int findStartingIndex(int[] nums, int target) {
