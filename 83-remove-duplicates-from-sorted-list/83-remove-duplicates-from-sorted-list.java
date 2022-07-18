@@ -15,12 +15,12 @@ class Solution {
         
         while(curr!=null){
             if(curr.next != null && (curr.val == curr.next.val)){
-                
-                ListNode next_next=curr.next.next;
+                curr.next=curr.next.next;
+                /*ListNode next_next=curr.next.next;
                 ListNode nodeTodlt=curr.next;
-                
+                //delete that node delete(nodeTodlt);
                 curr.next=next_next;
-                
+                */
             }
             else{
                 curr=curr.next;
