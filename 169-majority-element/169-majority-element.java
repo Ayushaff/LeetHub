@@ -2,7 +2,18 @@ class Solution
 {
     
     public int majorityElement(int[] nums) {
-        //O(N^2)
+        //3 sorting TC O(Nlogn) SC O(1) *We sorted nums in place here - if that is not allowed, then we must spend linear additional space on a copy of nums and sort the copy instead.*
+        Arrays.sort(nums);
+        return nums[nums.length/2];
+    }
+}
+        
+           //hashmap TC O(N) SC (N) we want soln of SC O(1) so more approaches are sorting and Boyer-Moore Voting Algorithm
+        //2)
+        
+      /*
+      1)
+      //O(N^2)
 
         int majorityCount = nums.length/ 2;
         for (int num : nums)
@@ -18,7 +29,7 @@ class Solution
         }
         return -1;
     }
-}
+}*/
         
         
         //O(N^2)
