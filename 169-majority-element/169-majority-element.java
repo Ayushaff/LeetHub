@@ -2,11 +2,25 @@ class Solution
 {
     
     public int majorityElement(int[] nums) {
-        //3 sorting TC O(Nlogn) SC O(1) *We sorted nums in place here - if that is not allowed, then we must spend linear additional space on a copy of nums and sort the copy instead.*
-        Arrays.sort(nums);
-        return nums[nums.length/2];
+        //4
+        int count=0 ,res =0;
+        for(int num:nums)
+        {
+            if(count==0)
+                res=num;
+            if(num!=res)
+                count--;
+            else count++;
+            
+        }
+        return res;
     }
 }
+        //3 sorting TC O(Nlogn) SC O(1) *We sorted nums in place here - if that is not allowed, then we must spend linear additional space on a copy of nums and sort the copy instead.*
+        /*Arrays.sort(nums);
+        return nums[nums.length/2];
+    }
+}*/
         
            //hashmap TC O(N) SC (N) we want soln of SC O(1) so more approaches are sorting and Boyer-Moore Voting Algorithm
         //2)
