@@ -9,17 +9,23 @@
  * }
  */
 class Solution {
+    //O(N ) O(1)
     public ListNode reverseList(ListNode head) {
-        ListNode curr=head;        
+        
+        if(head == null || head.next==null) return head;
+        
+        ListNode curr=head;         
         ListNode prev=null;
         
         while(curr!=null){
+            
             ListNode tmp=curr.next;
             curr.next=prev;
             prev=curr;
             curr=tmp;
         }   
-        return prev;
+        //if(curr==null) System.out.println("asd"); 
+        return prev; //is at last node became as a new head
     }
 }
         /*
