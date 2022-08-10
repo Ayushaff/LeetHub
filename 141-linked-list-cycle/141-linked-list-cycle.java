@@ -12,8 +12,7 @@
 public class Solution {
     public boolean hasCycle(ListNode head) {
         //hashtable 
-        //tc O(N) sc O(N)
-    
+   /* 
         Set<ListNode> set = new HashSet<>();
         while(head != null)
         {
@@ -25,20 +24,22 @@ public class Solution {
          return false;
     }
 }
-        
-/*
+      */
+
      //2 pointer      optimal
+/*
 1.Use two pointers, walker and runner.
 2.walker moves step by step. runner moves two steps at time.
 3.if the Linked List has a cycle walker and runner will meet at some
 point.
-               
+           */    
     if(head==null) return false;
             
     ListNode walker = head;
     ListNode runner = head;
             
-    while(runner.next!=null && runner.next.next!=null) {
+    while(runner.next!=null && runner.next.next!=null)
+    {
         
         walker = walker.next;
         runner = runner.next.next;
@@ -47,4 +48,5 @@ point.
         
     }
     return false;
-}*/
+}
+}
