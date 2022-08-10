@@ -12,7 +12,7 @@
 public class Solution {
     public boolean hasCycle(ListNode head) {
   
-        //2 pointer      optimal
+        //2 pointer      optimal O(N) O(1)
 /*
 1.Use two pointers, walker and runner.
 2.walker moves step by step. runner moves two steps at time.
@@ -21,16 +21,16 @@ point.
            */    
     if(head==null || head.next == null) return false;
             
-    ListNode walker = head;
-    ListNode runner = head;
+    ListNode s = head;
+    ListNode f = head;
             
-    while(runner.next!=null && runner.next.next!=null)
+    while(f.next!=null && f.next.next!=null) // if null found thats not a cycle
     {
         
-        walker = walker.next;
-        runner = runner.next.next;
+        s = s.next;
+        f = f.next.next;
         
-        if(walker==runner) return true;
+        if(s==f) return true;
         
     }
     return false;
