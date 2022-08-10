@@ -19,7 +19,7 @@ public class Solution {
 3.if the Linked List has a cycle walker and runner will meet at some
 point.
            */    
-    if(head==null) return false;
+    if(head==null || head.next == null) return false;
             
     ListNode walker = head;
     ListNode runner = head;
