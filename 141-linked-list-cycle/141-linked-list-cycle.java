@@ -11,22 +11,8 @@
  */
 public class Solution {
     public boolean hasCycle(ListNode head) {
-        //hashtable 
-   /* 
-        Set<ListNode> set = new HashSet<>();
-        while(head != null)
-        {
-            if(!set.add(head)) {
-                return true;
-            }
-           head = head.next;
-        }
-         return false;
-    }
-}
-      */
-
-     //2 pointer      optimal
+  
+        //2 pointer      optimal
 /*
 1.Use two pointers, walker and runner.
 2.walker moves step by step. runner moves two steps at time.
@@ -50,3 +36,18 @@ point.
     return false;
 }
 }
+
+     //hashtable O(N) O(N)
+   /* 
+        Set<ListNode> set = new HashSet<>();
+        while(head != null)
+        {
+            if(!set.add(head)) {
+                return true;
+            }
+           head = head.next;
+        }
+         return false;
+    }
+}
+      */
