@@ -23,14 +23,15 @@ public:
         {
             int size=q.size();            
             vector<int> currLevel;
+            
             while(size-- >0)
             {
-                TreeNode *node=q.front();
+                TreeNode *currNode=q.front();
                 q.pop();
-                if(node->left !=NULL) q.push(node->left);
-                if(node->right !=NULL)q.push(node->right);
+                if(currNode->left !=NULL) q.push(currNode->left);
+                if(currNode->right !=NULL)q.push(currNode->right);
                 
-                currLevel.push_back(node->val);
+                currLevel.push_back(currNode->val);
                     
             }    
             ans.push_back(currLevel);
