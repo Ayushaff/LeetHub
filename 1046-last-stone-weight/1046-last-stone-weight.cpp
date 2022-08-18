@@ -3,10 +3,8 @@ public:
     int lastStoneWeight(vector<int>& stones) {
         //default max heap 
         int stonessz=stones.size();
-        priority_queue<int>pq;
+        priority_queue<int>pq(begin(stones),end(stones));
         
-        for(int i=0;i<stonessz;i++)
-            pq.push(stones[i]);
         
         while(pq.size() > 1)
         {
