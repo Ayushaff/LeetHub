@@ -12,12 +12,21 @@ public:
         }
         
         //iterate ransomeNote 
+        
         for(auto ch:ransomNote)
         {
-            if(!map[ch]--)
+            if(map[ch]>0)
             {
-                return false;
+            /*for(int i=0;i<ransomNote.size();i++)
+                    cout<<ransomNote[i]<<" " <<map[ch]<<endl; */
+                map[ch]--;
+            } 
+            else{
+              /*for(int i=0;i<ransomNote.size();i++)
+                    cout<<ransomNote[i]<<" " <<map[ch]<<endl;  */
+            return false;
             }
+           
         }
             return true;
     }
