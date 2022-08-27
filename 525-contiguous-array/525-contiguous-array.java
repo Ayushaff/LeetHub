@@ -10,7 +10,6 @@ class Solution {
             if(nums[i]==0)
                 nums[i]=-1;
         
-        map.put(0,-1);
         int maxi=0 ,sum=0;
         for(int i=0;i<n;i++){
             sum+=nums[i];
