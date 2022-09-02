@@ -23,12 +23,14 @@ public:
         double sum=0;
         for(int i=0;i<n;i++){
             TreeNode* node=q.front();
+            sum+=node->val;
+            
             if(node->left!=NULL)
                 q.push(node->left);
             if(node->right)    
                 q.push(node->right);
             
-            sum+=node->val;
+            
                 q.pop();
        }
         ans.push_back(sum/n);
