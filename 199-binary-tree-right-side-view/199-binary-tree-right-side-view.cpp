@@ -9,27 +9,19 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-void inOrder(TreeNode *root,int level,map<int,int>& mp){
-    if(root==NULL){
-        return;
-    }
-    
-    inOrder(root->left,level+1,mp);
-    mp[level]=root->val;
-    inOrder(root->right,level+1,mp);
-    
-}
 class Solution {
 public:
     vector<int> rightSideView(TreeNode* root) {
-        
-        map<int,int>mp; //level,root value
-        inOrder(root,0,mp);
-        
-        vector<int>ans;
-        for(auto i:mp){
-            ans.push_back(i.second);
-        }
-        return ans;        
+        vector<int>res;
+        recursion(root,0,res);
+        return res;
+    }
+    void recursion(TreeNode* root,int level,vector<int>&res){
+        if(root==NULL)
+            return;
+        if(res.size()==level) 
+            res.push_back(root->val);
+        recursion(root->right,level+1,res);
+        recursion(root->left,level+1,res);
     }
 };
