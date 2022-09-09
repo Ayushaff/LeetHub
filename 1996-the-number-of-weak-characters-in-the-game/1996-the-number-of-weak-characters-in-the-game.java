@@ -11,6 +11,7 @@ class Solution {
             System.out.println(properties.length);
             if(properties[i][1]<maxDefence)
                 cnt++;
+            else
             maxDefence=Math.max(maxDefence,properties[i][1]);
         }
         return cnt;
