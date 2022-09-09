@@ -6,12 +6,13 @@ class Solution {
         
         Arrays.sort(properties,(a,b)->b[0]==a[0]?b[1]-a[1]:a[0]-b[0]);
         
-        int ans=0 ,maxDefence=Integer.MIN_VALUE;
+        int cnt=0 ,maxDefence=Integer.MIN_VALUE;
         for(int i=properties.length-1;i>=0;i--){
+            System.out.println(properties.length);
             if(properties[i][1]<maxDefence)
-                ans++;
+                cnt++;
             maxDefence=Math.max(maxDefence,properties[i][1]);
         }
-        return ans;
+        return cnt;
     }
 }
