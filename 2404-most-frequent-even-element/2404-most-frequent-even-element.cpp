@@ -10,12 +10,12 @@ public:
                    counts[i]++;    
             }
             
-            int ans=-1 ,fre=INT_MIN; 
+            int ans=-1 ,freq=INT_MIN; 
             
             for(auto i: counts){
                 //cout<<i.first <<" "<<i.second<<endl;
-                    if(i.second>fre){
-                            ans=i.first, fre=i.second;
+                    if(i.second>freq){
+                            ans=i.first, freq=i.second;
                     }
             }
             return ans;
