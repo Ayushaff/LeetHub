@@ -11,7 +11,7 @@ class Solution {
                //  else 
                //      counts.put(nums[i],1);                             
             }
-            int ans=-1 ,maxFreq=-1;
+            int ans=-1 ,maxFreq=Integer.MIN_VALUE;
             
             for(Integer num:counts.keySet()){
                     
@@ -21,8 +21,7 @@ class Solution {
                 }
                 else if(counts.get(num)==maxFreq && ans>num){
                         ans=num;                        
-                }
-            
+                }    
                     
             }
             return ans;
