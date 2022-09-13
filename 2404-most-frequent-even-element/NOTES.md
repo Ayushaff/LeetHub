@@ -1,1 +1,1 @@
-so im checking the freq and only when the freq of the current num is greater then the max freq that i have seen till now ido the updation otherwise not
+​
