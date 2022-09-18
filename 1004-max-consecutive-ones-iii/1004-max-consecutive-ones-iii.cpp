@@ -11,7 +11,9 @@ public:
                     while(countZero>k)
                     {
                         if(nums[i]==0)
+                        {
                         countZero--;
+                        }
                         i++;
                     }
                 ans=max(ans,(j-i)+1);
