@@ -25,7 +25,7 @@ public:
             }
             else
             {
-                if(st.empty()) 
+                if(st.empty()==true) 
                     break;
                 node=st.top();
                 st.pop();
