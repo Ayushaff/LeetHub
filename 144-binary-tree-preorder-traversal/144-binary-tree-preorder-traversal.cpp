@@ -12,7 +12,7 @@
 class Solution {
 public:
     vector<int> preorderTraversal(TreeNode* root) {
-
+    // stack implemetation
             vector<int>preorder;
             stack<TreeNode*>st;
             
