@@ -13,7 +13,8 @@ class Solution {
                 if (nums[low]<=nums[mid])
                 {
                 //left side is sorted 
-                        //if element lies on left half or not
+                        
+                        //is element lies on left half or not
                  if(target>=nums[low] && target<=nums[mid] )
                         high=mid-1; //elemenate right half 
                     
@@ -22,8 +23,10 @@ class Solution {
                 }
                 
                 else  {
-                    //right side is sorted if left is not sorted 
-                        if(target>= nums[mid] && target<= nums[high])
+                //right side is sorted becoz left wasnt sorted 
+                        
+                        //if element lies on right half or not
+                        if(target<= nums[high] && target>= nums[mid])
                                 low=mid+1;      //elemenate left half 
                         else
                                 high=mid-1;      //else eleminate right half
