@@ -26,7 +26,7 @@ class Solution {
                 //right side is sorted becoz left wasnt sorted 
                         
                         //if element lies on right half or not
-                        if(target<= nums[high] && target>= nums[mid])
+                        if(target>= nums[mid] && target<= nums[high])
                                 low=mid+1;      //elemenate left half 
                         else
                                 high=mid-1;      //else eleminate right half
