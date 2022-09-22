@@ -5,9 +5,9 @@ class Solution {
                                  
             for(int i=0;i<n;i++){
                     s+=nums[i];
-                    //System.out.println(s)
+                    System.out.println(s);
             }
-            
-            return (n*(n+1))/2 - s;
+            int ans=(n*(n+1))/2 - s;
+            return ans;
     }
 }
