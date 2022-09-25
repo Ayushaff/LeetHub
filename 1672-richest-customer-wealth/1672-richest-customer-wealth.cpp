@@ -1,6 +1,7 @@
 class Solution {
 public:
     int maximumWealth(vector<vector<int>>& accounts) {
+            //tc O(rows*cols) sc O(1)
         int maxw=0;
             int row=accounts.size() ,col=accounts[0].size();
             
