@@ -1,5 +1,27 @@
 class Solution {
 public:
+        vector<int> topKFrequent(vector<int>& nums, int k) {
+        unordered_map<int,int>mp;
+                for(auto num:nums){
+                        mp[num]++;
+                }
+        priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>pq;
+                
+                for(auto x:mp){
+                        pq.push(make_pair(x.second,x.first)); //freq of elements added as first in pq and elements are added as second
+                        if(pq.size()>k)
+                                pq.pop();
+                }
+                //values are as second in pq we need those elements only those kthFreq are left in pq
+                vector<int>ans;
+                while(!pq.empty()){
+                        pair<int,int>temp=pq.top();
+                        pq.pop();
+                        ans.push_back(temp.second);
+                }
+                return ans;
+}
+};
                 /*
         1 aproach o(nlonn) sorting and using extra space for vector
         
@@ -11,7 +33,7 @@ public:
             */
             
       // a map and a min heap
-        
+   /*     
     vector<int> topKFrequent(vector<int>& nums, int k) {
             unordered_map<int,int>counts;
             priority_queue<pair<int,int>, vector<pair<int,int>>,greater<pair<int,int>>>min_heap;
@@ -32,4 +54,4 @@ public:
             }
             return ans;
     }
-};
+};*/
