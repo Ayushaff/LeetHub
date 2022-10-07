@@ -3,14 +3,14 @@ class Solution
     
     public int majorityElement(int[] nums) {
         //4
-        int c=0,ele=0;
+        int life=0,ele=0;
             for(int num:nums){
-                if(c==0)
+                if(life==0)
                         ele=num;
                     if(ele==num)
-                            c+=1;
+                            life+=1;
                     else 
-                            c-=1;
+                            life-=1;
                     
             }            
             return ele;
