@@ -11,7 +11,7 @@ public:
                     st.pop();
             else st.push(c);
           }
-            if(st.size()==0)
+            if(st.empty())
                 return true;
             else
             return false;
