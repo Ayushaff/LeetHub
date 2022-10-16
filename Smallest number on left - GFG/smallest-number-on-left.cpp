@@ -10,7 +10,20 @@ using namespace std;
 class Solution{
 public:
     vector<int> leftSmaller(int n, int arr[]){
-        // code here
+        stack<int>st;vector<int>v;
+        
+        for(int i=0;i<n;i++){
+            while(!st.empty() && st.top()>=arr[i])
+                st.pop();
+                
+                int res=(st.empty()) ?-1:st.top();
+                st.push(arr[i]);
+                 v.push_back(res);
+        }
+        return v;
+    }
+};
+       /* // code here
         vector<int>v;
         int nxt=0;
         for(int i=0;i<n;i++){
@@ -25,7 +38,7 @@ public:
         }
      return v;   
     }
-};
+};*/
 
 //{ Driver Code Starts.
 
