@@ -18,7 +18,7 @@ public:
                 
                 int res=(st.empty()) ?-1:st.top();
                 st.push(arr[i]);
-                 v.push_back(res);
+                 v.push_back(res); 
         }
         return v;
     }
