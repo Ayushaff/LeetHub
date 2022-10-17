@@ -17,7 +17,7 @@ class Solution{
         stack<int>st;vector<int>v(n,-1);
         
         for(int i=n-1;i>=0;i--){
-            while(!st.empty() && arr[i] <= st.top())
+            while(!st.empty() && st.top()>=arr[i])
                 st.pop();
                 
                 int res=(st.empty()) ?-1:st.top();
