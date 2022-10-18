@@ -7,14 +7,15 @@ public:
             string s="11";
             for(int i=3;i<=n;i++){
                     string temp="";
-                    s+='~'; //DEDLIMITER 
+                    s+='~'; //delimiter 
                     int count=1;
                     
                     for(int j=1;j<s.length();j++){
                             if(s[j]!=s[j-1]){
                             temp+=to_string(count);//count stored
                             temp+=s[j-1]; //character which was not equal
-                                    count=1;
+                                    
+                            count=1;
                             }
                             else
                                     count++;
