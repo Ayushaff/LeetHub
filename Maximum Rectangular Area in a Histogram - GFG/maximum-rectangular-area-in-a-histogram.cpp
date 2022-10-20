@@ -6,11 +6,65 @@ using namespace std;
 // } Driver Code Ends
 class Solution
 {
-    public:
- 
-
+public:
 long long getMaxArea(long long arr[], int n)
     {
+        // Your code here
+        
+        //nsl
+        
+        vector<long long>nsl;
+        stack<long long>st1;
+        
+        //
+        for(int i=0;i<n;i++)
+        {
+            while(!st1.empty() && arr[st1.top()]>=arr[i])
+                st1.pop();
+                
+                if(st1.empty())
+                    nsl.push_back(-1);
+                    else
+                    nsl.push_back(st1.top());
+                    
+            st1.push(i);
+        }
+        //nsr
+        
+        
+         vector<long long> nsr;
+          stack<long long> st2;
+            
+          for(int i=n-1;i>=0;i--)
+          {
+              //cout<<arr[i]<<endl;
+              
+              while(!st2.empty()&&arr[st2.top()]>=arr[i])
+                      st2.pop();
+
+              if(st2.empty())
+                  nsr.push_back(n);         // pseudo index after last index 
+                else
+                  nsr.push_back(abs(st2.top()));
+ 
+              st2.push(i);
+          }
+          reverse(nsr.begin(),nsr.end());
+          
+            
+        //width
+        long long maxx=0;
+          for(int i=0;i<nsr.size();i++)
+            {
+                
+                long long curr = ((nsr[i]-nsl[i])-1) * arr[i];
+                maxx=max(maxx,curr);
+            }
+            
+            return maxx;
+    }
+};
+  /*  {
       
     
           long long max_area=0;  
@@ -22,6 +76,7 @@ long long getMaxArea(long long arr[], int n)
           {
               while(!stk.empty()&&arr[stk.top()]>=arr[i])
                       stk.pop();
+                      
               if(stk.empty())
                   left.push_back(-1);    
               else
@@ -55,7 +110,7 @@ long long getMaxArea(long long arr[], int n)
         
     }
 };
-
+*/
 
 //{ Driver Code Starts.
 
