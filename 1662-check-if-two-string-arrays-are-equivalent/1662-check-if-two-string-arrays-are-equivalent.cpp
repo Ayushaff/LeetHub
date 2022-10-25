@@ -10,7 +10,10 @@ public:
     }
         string convertToStr(vector<string>v){
                 string str;
-                for(auto i:v)
+                // for(auto i:v)
+                //         str+=i;
+                
+                for(auto const &i :v)
                         str+=i;
                 return str;
         }
