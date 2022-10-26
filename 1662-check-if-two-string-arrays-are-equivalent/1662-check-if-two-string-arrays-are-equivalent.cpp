@@ -5,9 +5,9 @@ public:
             int i=0,j=0,a=0,b=0;
             
             while(i<w1.size() and j<w2.size()){
-                    if(w1[i][a++] != w2[j][b++]) //word1 ith string and a is char of string
-                            return false;
-                    
+                    if(w1[i][a] != w2[j][b]) //word1 ith string and a is char of string 
+                        return false;
+                    a++,b++;
                     if(a>=w1[i].size())
                             i++,a=0;
                     if(b>=w2[j].size())
