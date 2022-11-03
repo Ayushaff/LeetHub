@@ -35,24 +35,28 @@ vector<long long> printFirstNegativeInteger(long long int arr[],
                 deque<long long>list;
                 long i=0,j=0;
                 
-                while(j<n){
-                    int winsz=j-i+1;
+                while(j<n)
+                {
+                    int winsz=(j-i+1);
                     
                     if(arr[j]<0)
                         list.push_back(arr[j]);
                         
                     if(winsz<k)
                         j++;
-                    else if(winsz==k){
+                        
+                    else if(winsz==k)
+                    {
                         if(!list.empty())
-                            ans.push_back(list.front());
+                            ans.push_back(list.front());    //this list would alwys contains -ve elements
                             
                             else
-                                ans.push_back(0);
+                                ans.push_back(0);   //if list is empty push_back zero
                                 
-                                if(arr[i]<0)
+                                if(arr[i]==list.front())
                                     list.pop_front();
-                                    i++;j++;
+                                    
+                        i++;j++;
                     }
                 }
                 return ans;
