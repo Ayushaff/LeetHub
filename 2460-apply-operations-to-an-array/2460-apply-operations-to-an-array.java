@@ -11,13 +11,13 @@ class Solution {
         }
         
         int i=0,j=0;
-        while(j<n){
-            if(nums[j]!=0)
-                nums[i++]=nums[j];
-            j++;
+        while(i<n){
+            if(nums[i]!=0)
+                nums[j++]=nums[i];
+            i++;
         }
-        while(i<n)
-            nums[i++]=0;
+        while(j<n)
+            nums[j++]=0;
         return nums;
     }
 }
