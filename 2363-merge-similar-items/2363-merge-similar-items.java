@@ -1,19 +1,12 @@
 class Solution {
+    
     public List<List<Integer>> mergeSimilarItems(int[][] item1, int[][] item2) {
+        
 
-        Map<Integer,Integer>mp=new TreeMap<>();
+        Map<Integer,Integer>mp=new TreeMap<>();        
+        updMap(item1,mp);
+        updMap(item2,mp);
         
-        for(int[] i:item1){
-            int vkey=i[0];
-            int wval=i[1];
-            mp.put(vkey,mp.getOrDefault(vkey,0)+wval);
-        }
-        
-        for(int[] i:item2){
-            int vkey=i[0];
-            int wval=i[1];
-            mp.put(vkey,mp.getOrDefault(vkey,0)+wval);
-        }
         List<List<Integer>>ans=new ArrayList<>();        
         
         for(Integer val: mp.keySet()){
@@ -24,4 +17,13 @@ class Solution {
         }
         return ans;
     }
+    private void updMap(int [][]item,Map<Integer,Integer>mp){
+    
+        for(int[] i:item){
+            int vkey=i[0];
+            int wval=i[1];
+            mp.put(vkey,mp.getOrDefault(vkey,0)+wval);
+        }
+
+}
 }
