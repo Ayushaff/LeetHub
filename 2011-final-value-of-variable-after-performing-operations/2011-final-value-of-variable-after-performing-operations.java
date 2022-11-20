@@ -3,24 +3,10 @@ class Solution {
         int x=0;
         //System.out.println(op[0]+123);
         for(int i=0;i<op.length;i++){
-        if(op[i].equalsIgnoreCase("--X")){
+        if(op[i].equalsIgnoreCase("--X") || op[i].equalsIgnoreCase("X--"))
                 --x;
-            System.out.println("--x");
-        }
-        
-        else if(op[i].equalsIgnoreCase("X--")){
-            x--;
-            System.out.println("x--");
-        }
-        else if(op[i].equalsIgnoreCase("++X")){
-            ++x;
-            System.out.println("--x");
-        }
-            
-        else if(op[i].equalsIgnoreCase("X++")){
+        else
             x++;
-            System.out.println("x++");
-        }
     }
         return x;
     }
