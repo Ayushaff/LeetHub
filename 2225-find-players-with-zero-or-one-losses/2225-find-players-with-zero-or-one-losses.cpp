@@ -15,7 +15,7 @@ public:
         }
         
         for(auto i:win){
-            if(lose.find(i.first)==lose.end())
+            if(lose.find(i.first)==lose.end())//if elements of win's map does not founds in the lose's map that is why its the winners 
                 ans[0].push_back(i.first);
         }
         sort(ans[0].begin(),ans[0].end());
