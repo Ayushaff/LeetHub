@@ -4,16 +4,17 @@ class Solution {
         
         
         Set<Character>set=new HashSet<>();
-        set.add('a');
-        set.add('e');
-        set.add('i');
-        set.add('o');
-        set.add('u');
-        set.add('A');
-        set.add('E');
-        set.add('I');
-        set.add('O');
-        set.add('U');
+        set.addAll(Arrays.asList(new Character[] {'A','E','I','O','U','a','e','i','o','u'}));
+        // set.add('a');
+        // set.add('e');
+        // set.add('i');
+        // set.add('o');
+        // set.add('u');
+        // set.add('A');
+        // set.add('E');
+        // set.add('I');
+        // set.add('O');
+        // set.add('U');
 
         System.out.println(i);
         System.out.println(j);
