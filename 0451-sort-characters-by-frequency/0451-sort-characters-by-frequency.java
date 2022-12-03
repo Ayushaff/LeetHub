@@ -23,7 +23,7 @@ class Solution {
             for(int i=bucket.length-1;i>=0;i--){
                 if(bucket[i]!=null){
                 for(char c:bucket[i]){
-                    for(int j=0;j<mp.get(c);j++){
+                    for(int j=0;j<i;j++){
                         sb.append(c);
                         }
                     }
