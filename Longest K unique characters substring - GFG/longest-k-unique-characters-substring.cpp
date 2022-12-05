@@ -18,25 +18,28 @@ class Solution{
         while(j<n)
         {
             mp[s[j]]++;
-            if(mp.size()<k)
-                j++;
-                
-                else if(mp.size()==k) //mp.size() is the number of unique character == k
+              //Sliding Window Condition: hashmap.size = k  [OR number of Unique Characters =k];
+          if(mp.size()>k)
+          {
+               /*Reduce the frequency of ith element by 1 and remove it from map if frequency becomes 0.
+                                                 Keep doing above [reducing window size] till hm.size becomes <=k  */
+                while(mp.size()>k)
                 {
-                    mx=max(mx,j-i+1);
-                    j++;
-                }
-                else if(mp.size()>k)    //if uniqness is more than k then move i++ and remove the calculations from i
-                {
-                    while(mp.size()>k)
+                    mp[s[i]]--;
+                    
+                    if(mp[s[i]]==0)
                     {
-                        mp[s[i]]--;
-                        if(mp[s[i]]==0)
-                            mp.erase(s[i]);    
+                        mp.erase(s[i]);
+                    }  
                     i++;
-                    }
-                    j++;
                 }
+          }
+              if(mp.size()==k)//unique chars = k , compute candidate answer.
+              {
+                  int tempans=j-i+1;
+                  mx=max(mx,tempans);
+              }
+          j++;// increase window size and look for next window where sum = target
         }
         return mx;
     }
