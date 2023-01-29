@@ -1,6 +1,6 @@
 class Solution {
 private static void f(int ind,int arr[],List<List<Integer>>ans,List<Integer>ds){
-                if(ind>=arr.length){
+                if(ind==arr.length){
                         // List<Integer>d=new ArrayList<>(ds);
                         // Collections.sort(d);
                         ans.add(new ArrayList<>(ds));
