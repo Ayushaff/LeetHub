@@ -1,6 +1,7 @@
 class Solution {
 public:
     int compress(vector<char>& chars) {
+            
         chars.push_back('~');
             vector<char>ans;
             int n=chars.size();
