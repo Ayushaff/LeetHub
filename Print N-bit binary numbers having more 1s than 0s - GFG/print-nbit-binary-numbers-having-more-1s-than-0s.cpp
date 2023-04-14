@@ -14,8 +14,7 @@ void solve(int o,int z,string op,vector<string>&res,int n){
         return;
     }
     string op1=op;
-    op1.push_back('1');
-    solve(o+1,z,op1,res,n-1);
+    solve(o+1,z,op1+'1',res,n-1);
     if(o>z){
         string op2=op;
         solve(o,z+1,op2+'0',res,n-1);
