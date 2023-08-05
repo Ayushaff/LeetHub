@@ -7,9 +7,41 @@ using namespace std;
 //User function Template for C++
 
 class Solution {
+    private:
+    
+    void dfs(int node,vector<int>adjls[],int vis[]){
+        vis[node]=1;
+        for(auto it:adjls[node]){
+            if(!vis[it]){
+                dfs(it,adjls,vis);
+            }
+        }
+    }
   public:
-    int numProvinces(vector<vector<int>> adj, int V) {
+    int numProvinces(vector<vector<int>> adj, int v) {
         // code here
+        vector<int>adjls[v];
+        //to adjacency matrix into adjacency list
+        for(int i=0;i<v;i++){
+            for(int j=0;j<v;j++){
+                if(adj[i][j]==1 && i!=j){
+                    adjls[i].push_back(j);
+                    adjls[j].push_back(i);
+                }
+            }
+        }
+        
+        int vis[v]={0};
+        int cnt=0;
+        for(int i=0;i<v;i++){
+            
+            if(!vis[i]){
+                cnt++;
+                dfs(i,adjls,vis);
+            }
+        }
+        
+        return cnt;
     }
 };
 
