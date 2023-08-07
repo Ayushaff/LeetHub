@@ -16,7 +16,7 @@ class Solution {
       // store {{row, column}, time}
       queue < pair < pair < int, int > , int >> q;
       int vis[n][m];
-      int cntFresh = 0;
+      
       for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
           // if cell contains rotten orange
@@ -29,23 +29,22 @@ class Solution {
           else {
             vis[i][j] = 0;
           }
-          // count fresh oranges
-          if (grid[i][j] == 1) cntFresh++;
+          
         }
       }
 
-      int tm = 0;
+      int time = 0;
       // delta row and delta column
       int drow[] = {-1, 0, +1, 0};
       int dcol[] = {0, 1, 0, -1}; 
-      int cnt = 0;
+      
 
       // bfs traversal (until the queue becomes empty)
       while (!q.empty()) {
         int r = q.front().first.first;
         int c = q.front().first.second;
         int t = q.front().second;
-        tm = max(tm, t);
+        time = max(time, t);
         q.pop();
         // exactly 4 neighbours 
         for (int i = 0; i < 4; i++) {
@@ -60,16 +59,18 @@ class Solution {
              q.push({{nrow, ncol}, t + 1}); 
             // mark as rotten
             vis[nrow][ncol] = 2;
-            cnt++;
+            
           }
         }
       }
 
-      // if all oranges are not rotten
-      if (cnt != cntFresh) return -1;
-
-      return tm;
-
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            if(grid[i][j]==1&&vis[i][j]!=2)
+            return -1;
+        }
+    }
+    return time;
     }
 };
 
