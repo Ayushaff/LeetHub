@@ -6,7 +6,19 @@ using namespace std;
 
 // } Driver Code Ends
 // User function Template for C++
+/*
+Algorithm:
 
+1 Define the dfs function to traverse and mark island cells. Within this function, add the relative cell position to the list (cell-base).
+2 Define the countDistinctIslands function to find the count of distinct islands using Depth-First Search (DFS).
+3 Create a 2D array vis to mark visited cells.
+4 Create an empty set st to store distinct island configurations.
+5 Traverse the grid using nested loops.
+* If a cell is unvisited and represents an island (value is 1), start DFS traversal.
+* For each island found, store its unique configuration in the set st.
+6 Return the size of the set st, which represents the count of distinct islands.
+
+*/
 class Solution {
 private:
     void dfs(int row, int col, vector<vector<int>>& vis, vector<vector<int>>& mat, vector<pair<int,int>>& vec, int brow, int bcol) {
