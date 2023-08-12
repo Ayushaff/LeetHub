@@ -19,22 +19,32 @@ Algorithm:
 6 Return the size of the set st, which represents the count of distinct islands.
 
 */
+// Initial Template for C++
+#include <bits/stdc++.h>
+using namespace std;
+
+// } Driver Code Ends
+
+// User function Template for C++
 class Solution {
 private:
+    // DFS function to traverse and mark island cells
     void dfs(int row, int col, vector<vector<int>>& vis, vector<vector<int>>& mat, vector<pair<int,int>>& vec, int brow, int bcol) {
         vis[row][col] = 1;
-        
-        vec.push_back({row - brow, col - bcol}); // Making a list of cell-base
+
+        // Add relative cell position to the list (cell-base)
+        vec.push_back({row - brow, col - bcol});
         int n = mat.size();
         int m = mat[0].size();
-        
+
         // Traverse neighbors in 4 directions
         int drow[] = {-1, 0, 1, 0};
         int dcol[] = {0, 1, 0, -1};
-        
+
         for (int i = 0; i < 4; i++) {
             int nrow = row + drow[i];
             int ncol = col + dcol[i];
+            // check for valid unvisited land neighbour coordinates 
             if (nrow >= 0 && nrow < n && ncol >= 0 && ncol < m && !vis[nrow][ncol] && mat[nrow][ncol] == 1) {
                 dfs(nrow, ncol, vis, mat, vec, brow, bcol);
             }
@@ -46,24 +56,30 @@ public:
         int n = mat.size();
         int m = mat[0].size();
         
-        vector<vector<int>> vis(n, vector<int>(m, 0)); 
-        set<vector<pair<int,int>>> st;
+        // Create a 2D array to mark visited cells
+        vector<vector<int>> vis(n, vector<int>(m, 0));
         
-        // Traverse to find the first island
+        // Set to store distinct island configurations
+        set<vector<pair<int,int>>> st;
+
+        // Traverse the grid to find distinct islands
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
+                 // if not visited and is a land cell
                 if (!vis[i][j] && mat[i][j] == 1) {
                     // Found an island
                     vector<pair<int,int>> vec;
-                    dfs(i, j, vis, mat, vec, i, j); 
-                    st.insert(vec); 
+                    dfs(i, j, vis, mat, vec, i, j);
+                    // store in set
+                    st.insert(vec);
                 }
             }
         }
-        return st.size();
+        return st.size(); // Return the count of distinct islands
     }
 };
 
+// Driver Code Ends
 
 
 //{ Driver Code Starts.
