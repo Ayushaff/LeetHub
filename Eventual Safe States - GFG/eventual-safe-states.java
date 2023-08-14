@@ -39,7 +39,9 @@ class GFG {
 // } Driver Code Ends
 
 
-//just che
+//just check if theres any nodes who makes the cycle
+// the nodes who doestnt make will be out of for loop and can add them in check
+  //if a node has any adj nodes just check such cyclic conditions if not cycle add that node in check array 
 class Solution {
     boolean dfs(int node, List<List<Integer>> adj,int[]vis,int pathvis[],int check[])
     {
@@ -48,6 +50,7 @@ class Solution {
         check[node]=0;
         for(int it:adj.get(node))
         {
+            //if a node has any adj nodes just check such cyclic conditions and if that node doest satisy u such conditions to be true its the safe node and should be goin into check array
             if(vis[it]==0)
             {
                 if(dfs(it,adj,vis,pathvis,check)==true)
@@ -63,6 +66,7 @@ class Solution {
             }
         }
         check[node]=1;
+        // System.out.println(check[node]);
         pathvis[node]=0;
         return false;
     }
