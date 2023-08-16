@@ -46,9 +46,9 @@ class Solution {
         
         Queue<Integer>q=new LinkedList<>();
         
-        for(int it=0;it<n;it++){
-            if(in[it]==0){
-                q.add(it);
+        for(int i=0;i<n;i++){
+            if(in[i]==0){
+                q.add(i);
             }
         }
         
@@ -57,7 +57,7 @@ class Solution {
             Integer node=q.poll();
             c++;
             
-            for(Integer it:adj.get(node)){
+            for(int it:adj.get(node)){
                     in[it]--;
                     if(in[it]==0)
                     q.add(it);
