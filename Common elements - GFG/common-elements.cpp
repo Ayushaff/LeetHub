@@ -9,20 +9,48 @@ class Solution
     public:    
        vector <int> commonElements (int a[], int b[], int c[], int n1, int n2, int n3)
         {
-            //code here.
-            unordered_map<int,int>m1,m2,m3;
-            for(int i=0;i<n1;i++)m1[a[i]]++;
-            for(int i=0;i<n2;i++)m2[b[i]]++;
-            for(int i=0;i<n3;i++)m3[c[i]]++;
             
-            vector<int>v;
-            for(int i=0;i<n1;i++)
-            if(m1[a[i]] &&m2[a[i]]&&m3[a[i]] ){
+             int i=0,j=0,k=0;
+        
+        vector<int>v;
+        
+        while(i<n1&j<n2&&k<n3){
+            if(a[i]==b[j]&&b[j]==c[k]){
                 v.push_back(a[i]);
-                m1[a[i]]=0;
+                i++,j++,k++;
             }
-            return v;
+            else if(a[i]<b[j])i++;
+            else if(b[j]<c[k])j++;
+            else k++;
+            
+            
+            int x=a[i-1];
+            while(a[i]==x)i++;
+            
+            int y=b[j-1];
+            while(b[j]==y)j++;
+            
+            int z=c[k-1];
+            while(c[k]==z)k++;
+            
         }
+        if(v.size()==0)return {-1};
+        return v;
+        }
+        //     //code here.
+        //     unordered_map<int,int>m1,m2,m3;
+        //     for(int i=0;i<n1;i++)m1[a[i]]++;
+        //     for(int i=0;i<n2;i++)m2[b[i]]++;
+        //     for(int i=0;i<n3;i++)m3[c[i]]++;
+            
+        //     vector<int>v;
+        //     for(int i=0;i<n1;i++)
+        //     if(m1[a[i]] &&m2[a[i]]&&m3[a[i]] ){
+        //         v.push_back(a[i]);
+        //         m1[a[i]]=0;
+        //     }
+        //     return v;
+        // }
 
 };
 
