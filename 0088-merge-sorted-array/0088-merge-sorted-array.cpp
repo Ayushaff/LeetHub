@@ -2,7 +2,7 @@ class Solution {
 public:
     //3optimial merge sort
     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
-    int i=m-1,j=n-1,k=m+n-1; //so k gone at last
+    int i=m-1,j=n-1,k=m+n-1; //so k gone at last k will hold the last index nums2 and p3 will keep track of index where we will place the element.
     while(i>=0&&j>=0){
         if(nums1[i]>nums2[j]){
             nums1[k]=nums1[i];
