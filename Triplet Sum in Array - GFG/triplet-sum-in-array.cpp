@@ -14,11 +14,12 @@ class Solution{
         unordered_set<int> s;
 
         // Subtract current element from the target
-        int curr_sum = X - a[i];
+        
 
         // Traverse the array to find a pair with sum equals to curr_sum
         for (int j = i + 1; j < n; j++) {
-            if (s.find(curr_sum - a[j]) != s.end()) {
+            int sum = X - a[i]-a[j];
+            if (s.find(sum) != s.end()) {
                 return true;
             }
             s.insert(a[j]);
