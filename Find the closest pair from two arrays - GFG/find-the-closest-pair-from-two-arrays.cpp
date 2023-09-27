@@ -17,7 +17,7 @@ class Solution{
                 closesDiff=abs(x-sum);
                 e1=arr[i],e2=brr[j];
             }
-             if(sum<x)i++;
+            else if(sum<x)i++;
             else j--;
         }
         vector<int>a;
