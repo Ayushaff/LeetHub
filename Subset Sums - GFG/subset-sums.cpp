@@ -6,21 +6,33 @@ using namespace std;
 class Solution
 {
 public:
-void p(int i,int s,vector<int>&arr,int n,vector<int>&ans){
-    
-    if(i==n){
+void p(int ele,int s,vector<int>&arr,int n,vector<int>&ans){
+       
         ans.push_back(s);
-        return;
+    
+    for(int i=ele;i<n;i++){
+        s+=arr[i];
+        p(i+1,s,arr,n,ans);
+        s-=arr[i];
     }
     
-    // ds.push_back(arr[i]);
-    s+=arr[i];
-    p(i+1,s,arr,n,ans);
-    
-    // ds.pop_back();
-    s-=arr[i];
-    p(i+1,s,arr,n,ans);
 }
+
+// void p(int i,int s,vector<int>&arr,int n,vector<int>&ans){
+    
+//     if(i==n){
+//         ans.push_back(s);
+//         return;
+//     }
+    
+//     // ds.push_back(arr[i]);
+//     s+=arr[i];
+//     p(i+1,s,arr,n,ans);
+    
+//     // ds.pop_back();
+//     s-=arr[i];
+//     p(i+1,s,arr,n,ans);
+
     vector<int> subsetSums(vector<int> arr, int n)
     {
         // Write Your Code here
