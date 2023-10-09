@@ -15,7 +15,7 @@ class Solution {
             int mid = lo + (hi - lo) / 2;
             
             if (nums[mid] >= target) {
-                hi = mid - 1;//will take high to left evry time if even we found target
+                hi = mid - 1;//will take high to left evry time if even we found target leads us to giving start index
             } 
             else{
                 lo = mid + 1;
@@ -33,7 +33,7 @@ class Solution {
         while (lo <= hi) {
             int mid = lo + (hi - lo) / 2;
             if (nums[mid] <= target) {
-                lo = mid + 1;
+                lo = mid + 1;//will take low to right evry time if even we found target which leads us to giving end index
             } else {
                 hi = mid - 1;
             }
