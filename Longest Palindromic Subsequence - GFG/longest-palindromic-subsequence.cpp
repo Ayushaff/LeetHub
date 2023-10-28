@@ -10,7 +10,7 @@ using namespace std;
 
 class Solution{
   public:
-  //find lcs  with help 
+  //find lcs  with help of string given and given string reversed 
   int lcs(int n,int m,string a,string b){
       int t[n+1][m+1];
       
